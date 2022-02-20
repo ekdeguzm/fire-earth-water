@@ -24,24 +24,30 @@ function playRound(playerSelection, computerSelection) {
     // compare playerSelection and computerSelection
     if (playerSelection === "rock") {
         if (computerSelection === "paper") {
+            computerScore += 1
             return console.log("You Lose! " + computerSelection + " beats " + playerSelection);
         } else if (computerSelection === "scissors") {
+            playerScore += 1
             return console.log("You Win! " + playerSelection + " beats " + computerSelection);
         } else {
             return console.log("Go again! " + "Computer also selected " + playerSelection);
         }
     }   else if (playerSelection === 'scissors') {
         if (computerSelection === "paper") {
+            playerScore += 1
             return console.log("You Win! " + playerSelection + " beats " + computerSelection);
         } else if (computerSelection === "rock") {
+            computerScore += 1
             return console.log("You Lose! " + computerSelection + " beats " + playerSelection);
         } else if (playerSelection === 'scissors') {
             return console.log("Go again! " + "Computer also selected " + playerSelection );
         }
     } else if (playerSelection === 'paper') {
         if (computerSelection === "rock") {
+            playerScore += 1
             return console.log("You Win! " + playerSelection + " beats " + computerSelection);
         } else if (computerSelection === "scissors") {
+            computerScore += 1
             return console.log("You Lose! " + computerSelection + " beats " + playerSelection);
         } else if (playerSelection === 'paper') {
             return console.log("Go again! " + "Computer also selected " + playerSelection );
@@ -59,11 +65,24 @@ function game() {
         const computerChoice = computerPlay();
         playRound(playerChoice, computerChoice);
         console.log("This is game " + (i + 1));
+        console.log("Player Score: " + playerScore);
+        console.log("Computer Score: " + computerScore);
+        console.log("\n")
     }
-}
+    if (computerScore > playerScore) {
+        console.log("You have lost the game! The world ends.")
+    } else if (playerScore > computerScore) {
+        console.log("You have saved humanity! You Win!");
+    } else {
+        console.log("The game is a tie. Rematch.");
+        }
+    }
 
+playerScore = 0
+computerScore = 0
 
 
 console.log("Aliens have landed on Earth and demand a game of rock paper scissors from a worthy opponent.")
 console.log("You are the chosen one..")
+console.log("\n")
 game()
