@@ -61,7 +61,7 @@ function playRound(playerSelection, computerSelection) {
 function game() {
     for (let i = 0; i < 5; i++) {
         console.log("This is game " + (i + 1));
-        const playerChoice = window.prompt("Choose your weapon: rock, paper, or scissors?");
+        const playerChoice = window.prompt("Choose your weapon: rock, paper, or scissors?").toLowerCase();
         console.log("You have chosen " + playerChoice + "..");
         const computerChoice = computerPlay();
         playRound(playerChoice, computerChoice);
