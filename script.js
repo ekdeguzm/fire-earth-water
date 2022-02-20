@@ -60,11 +60,11 @@ function playRound(playerSelection, computerSelection) {
 // create function to track rounds
 function game() {
     for (let i = 0; i < 5; i++) {
-        const playerChoice = prompt("Choose your weapon: rock, paper, or scissors?");
+        console.log("This is game " + (i + 1));
+        const playerChoice = window.prompt("Choose your weapon: rock, paper, or scissors?");
         console.log("You have chosen " + playerChoice + "..");
         const computerChoice = computerPlay();
         playRound(playerChoice, computerChoice);
-        console.log("This is game " + (i + 1));
         console.log("Player Score: " + playerScore);
         console.log("Computer Score: " + computerScore);
         console.log("\n")
@@ -81,8 +81,7 @@ function game() {
 playerScore = 0
 computerScore = 0
 
-
 console.log("Aliens have landed on Earth and demand a game of rock paper scissors from a worthy opponent.")
-console.log("You are the chosen one..")
+console.log("You are the one humanity choses..")
 console.log("\n")
 game()
