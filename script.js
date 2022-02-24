@@ -82,6 +82,6 @@ playerScore = 0
 computerScore = 0
 
 console.log("Aliens have landed on Earth and demand a game of rock paper scissors from a worthy opponent.")
-console.log("You are the one humanity choses..")
+console.log("You are the one humanity has chosen..")
 console.log("\n")
 game()
