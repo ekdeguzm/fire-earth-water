@@ -58,30 +58,30 @@ function playRound(playerSelection, computerSelection) {
 
 // we want to have a max of five rounds, keeps score, and reports a winner at the end
 // create function to track rounds
-function game() {
-    for (let i = 0; i < 5; i++) {
-        console.log("This is game " + (i + 1));
-        const playerChoice = window.prompt("Choose your weapon: rock, paper, or scissors?").toLowerCase();
-        console.log("You have chosen " + playerChoice + "..");
-        const computerChoice = computerPlay();
-        playRound(playerChoice, computerChoice);
-        console.log("Player Score: " + playerScore);
-        console.log("Computer Score: " + computerScore);
-        console.log("\n")
-    }
-    if (computerScore > playerScore) {
-        console.log("You have lost the game! The world ends.")
-    } else if (playerScore > computerScore) {
-        console.log("You have saved humanity! You Win!");
-    } else {
-        console.log("The game is a tie. Rematch.");
-        }
-    }
+// function game() {
+//     for (let i = 0; i < 5; i++) {
+//         console.log("This is game " + (i + 1));
+//         const playerChoice = window.prompt("Choose your weapon: rock, paper, or scissors?").toLowerCase();
+//         console.log("You have chosen " + playerChoice + "..");
+//         const computerChoice = computerPlay();
+//         playRound(playerChoice, computerChoice);
+//         console.log("Player Score: " + playerScore);
+//         console.log("Computer Score: " + computerScore);
+//         console.log("\n")
+//     }
+//     if (computerScore > playerScore) {
+//         console.log("You have lost the game! The world ends.")
+//     } else if (playerScore > computerScore) {
+//         console.log("You have saved humanity! You Win!");
+//     } else {
+//         console.log("The game is a tie. Rematch.");
+//         }
+//     }
 
 playerScore = 0
 computerScore = 0
 
-console.log("Aliens have landed on Earth and demand a game of rock paper scissors from a worthy opponent.")
-console.log("You are the one humanity has chosen..")
-console.log("\n")
-game()
+// console.log("Aliens have landed on Earth and demand a game of rock paper scissors from a worthy opponent.")
+// console.log("You are the one humanity has chosen..")
+// console.log("\n")
+// game()
