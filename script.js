@@ -81,6 +81,8 @@ function game() {
 playerScore = 0
 computerScore = 0
 
+// Going to delete this storyline. --> want to pursue idea with fire water earth. 
+
 console.log("Aliens have landed on Earth and demand a game of rock paper scissors from a worthy opponent.")
 console.log("You are the one humanity has chosen..")
 console.log("\n")
