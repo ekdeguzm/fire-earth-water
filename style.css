@@ -35,6 +35,20 @@ body {
 
 }
 
+#selection {
+font-weight: bold;
+}
+
+#results {
+    font-size: larger;
+    font-weight: bold;
+}
+
+.lives-container {
+    display: flex;
+    justify-content: space-evenly;
+}
+
 .footer {
     background-color: lightgray;
     padding: 5px;
