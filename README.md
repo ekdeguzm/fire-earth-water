@@ -8,7 +8,7 @@ Fire > Earth > Water > Fire.
 
 Created with HTML, CSS, and JS.
 
-**First stage: Game in the browser console**
+## **First stage: Game in the browser console**
 
 The benefits I got from this stage:
 
@@ -16,7 +16,7 @@ The benefits I got from this stage:
    * Learned how to input chosen item and keep score. 
    * Enjoyed seeing the importance of creating a struture of the game first before creating UI.
 
-**Second stage: Creating the UI **
+## **Second stage: Creating the UI**
 
 The benefits I got from this stage:
 
