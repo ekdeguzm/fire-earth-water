@@ -104,12 +104,12 @@ buttons.forEach((button) => {
 function checkLives(playerLives, computerLives) {
     if (computerLives == 0) {
         results.textContent = "You beat the computer. Congratulations!";
-        alert("New Game?")
+        alert("You beat the computer. Congratulations!\n\nNew Game?")
         reset()
         location.reload()
     } else if (playerLives == 0) {
         results.textContent = "You have perished at the hands of the computer.";
-        alert("New Game?")
+        alert("You have perished at the hands of the computer.\n\nNew Game?")
         reset()
         location.reload()
     }
