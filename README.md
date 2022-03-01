@@ -1,10 +1,26 @@
-# rock-paper-scissors
+# Fire Earth Water
 
-This is a Rock Paper Scissors game created to run in the terminal
+Link to the live demo: https://ekdeguzm.github.io/fire-earth-water/
 
-When it this project is completed, I hope to:
+Simple implementation of Rock Paper Scissors game from The Odin Project curriculum but with elements of nature instead.
 
-    * Use for and if loops successfully 
-    * Have user be able to input of chosen item in variations of uppercase and lowercase
-    * Have the score be recorded and max of five games.
-    * This is a test 
+Fire > Earth > Water > Fire.
+
+Created with HTML, CSS, and JS.
+
+First stage | Game in the browser console
+
+The benefits I got from this stage:
+
+   * Deepened knowledge of how functions work with each other.
+   * Learned how to input chosen item and keep score. 
+   * Enjoyed seeing the importance of creating a struture of the game first before creating UI.
+
+Second stage | Creating the UI 
+
+The benefits I got from this stage:
+
+   * How to create buttons out of icons and create a zooming and color changing effect when hovering over.
+   * How to register an action after clicking a button and declaring an argument.
+   * Learned basic manipulations of elements styles through JavaScript code (setting attributes, adding/removing classes, changing inline styles and texts).
+   * Improved my understanding of JavaScript functions (organization, scopes, calling, invoking, breaking down into smaller ones functions).
