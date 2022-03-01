@@ -89,14 +89,6 @@ games.textContent = "Number of games: " + numberOfGames;
 
 
 
-<<<<<<< HEAD
-// Going to delete this storyline. --> want to pursue idea with fire water earth. 
-
-console.log("Aliens have landed on Earth and demand a game of rock paper scissors from a worthy opponent.")
-console.log("You are the one humanity has chosen..")
-console.log("\n")
-game()
-=======
 const buttons = document.querySelectorAll('button');
 
 
@@ -127,4 +119,3 @@ function reset() {
     computerLives = 0
     playerLives = 0
 }
->>>>>>> rps-ui
