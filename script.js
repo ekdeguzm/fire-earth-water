@@ -1,6 +1,7 @@
-playerScore = 0
-computerScore = 0
-choice = ''
+let playerLives = 5
+let computerLives = 5
+let playerChoice
+let computerSelection;
 
 function computerPlay() {
     // randomly generate a number
@@ -8,103 +9,98 @@ function computerPlay() {
     // associate number with rock, paper, or scissors
     // if the computer number is 1, return rock
     if (computerNumber === 1) {
-        return "fire"; 
+        return "Fire"; 
     }
     // if the computer number is 2, return paper
     if (computerNumber === 2) {
-        return "water"; 
+        return "Water"; 
     }
     // if the computer number is 3, return scissors
     if (computerNumber === 3) {
-        return "earth"; 
+        return "Earth"; 
     }
 };
 
 // create a program that plays a single round of Rock Paper Scissors
 function playRound(playerSelection, computerSelection) {
     // compare playerSelection and computerSelection
-    if (playerSelection === "fire") {
-        if (computerSelection === "water") {
-            computerScore += 1
-            return console.log("You Lose! " + computerSelection + " beats " + playerSelection);
-        } else if (computerSelection === "earth") {
-            playerScore += 1
-            return console.log("You Win! " + playerSelection + " beats " + computerSelection);
+    if (playerSelection === "Fire") {
+        if (computerSelection === "Water") {
+            playerLives -= 1
+            selection.textContent = "You shoot out a burst of fire. The computer jets out stream of water."
+            results.textContent = "You Lose! " + computerSelection + ' beats ' + playerSelection;
+            lives.textContent = "Player Lives: " + playerLives + " | " + "Computer Lives: " + computerLives;
+        } else if (computerSelection === "Earth") {
+            selection.textContent = "A fire tornado appears from your hands. The computer throws blades of grass towards you."
+            computerLives -= 1
+            results.textContent = "You Win! " + playerSelection + ' beats ' + computerSelection;
+            lives.textContent = "Player Lives: " + playerLives + " | " + "Computer Lives: " + computerLives;
         } else {
-            return console.log("Go again! " + "Computer also selected " + playerSelection);
+            selection.textContent = "You shoot out a burst of flames. The computer counters with flames as well."
+            results.textContent = "It's a tie! Computer has also selected " + playerSelection;
+            lives.textContent = "Player Lives: " + playerLives + " | " + "Computer Lives: " + computerLives;
         }
-    }   else if (playerSelection === 'water') {
-        if (computerSelection === "fire") {
-            playerScore += 1
-            return console.log("You Win! " + playerSelection + " beats " + computerSelection);
-        } else if (computerSelection === "earth") {
-            computerScore += 1
-            return console.log("You Lose! " + computerSelection + " beats " + playerSelection);
-        } else if (playerSelection === 'water') {
-            return console.log("Go again! " + "Computer also selected " + playerSelection );
+    } else if (playerSelection === "Water") {
+        if (computerSelection === "Fire") {
+            selection.textContent = "You shoot out a jet of water. The computer hurls flames at you."
+            computerLives -= 1
+            results.textContent = "You Win! " + playerSelection + ' beats ' + computerSelection;
+            lives.textContent = "Player Lives: " + playerLives + " | " + "Computer Lives: " + computerLives;
+        } else if (computerSelection === "Earth") {
+            selection.textContent = "You shoot out a jet of water. The computer throws blades of grass at you."
+            playerLives -= 1
+            results.textContent = "You Lose! " + computerSelection + ' beats ' + playerSelection;
+            lives.textContent = "Player Lives: " + playerLives + " | " + "Computer Lives: " + computerLives;
+        } else if (playerSelection === 'Water') {
+            selection.textContent = "You shoot out a jet of water. The also streams a jet of water."
+            results.textContent = "It's a tie! Computer has also selected " + playerSelection;
+            lives.textContent = "Player Lives: " + playerLives + " | " + "Computer Lives: " + computerLives;
         }
-    } else if (playerSelection === 'earth') {
-        if (computerSelection === "water") {
-            playerScore += 1
-            return console.log("You Win! " + playerSelection + " beats " + computerSelection);
-        } else if (computerSelection === "fire") {
-            computerScore += 1
-            return console.log("You Lose! " + computerSelection + " beats " + playerSelection);
-        } else if (playerSelection === 'earth') {
-            return console.log("Go again! " + "Computer also selected " + playerSelection );
+    } else if (playerSelection === 'Earth') {
+        if (computerSelection === "Water") {
+            selection.textContent = "You shoot blades of grass from your palms. The computer streamlines water at you."
+            computerLives -= 1
+            results.textContent = "You Win! " + playerSelection + ' beats ' + computerSelection;
+            lives.textContent = "Player Lives: " + playerLives + " | " + "Computer Lives: " + computerLives;
+        } else if (computerSelection === "Fire") {
+            selection.textContent = "You shoot blades of grass from your palms. The computer hurls flames at you."
+            playerLives -= 1
+            results.textContent = "You Lose! " + computerSelection + ' beats ' + playerSelection;
+            lives.textContent = "Player Lives: " + playerLives + " | " + "Computer Lives: " + computerLives;
+        } else if (playerSelection === 'Earth') {
+            selection.textContent = "You shoot blades of grass from your palms. The computer also aims grass at you."
+            results.textContent = "It's a tie! Computer has also selected " + playerSelection;
+            lives.textContent = "Player Lives: " + playerLives + " | " + "Computer Lives: " + computerLives;
 
         }
 }
 };
 
-// create buttons that result in playerSelection
-const fireButton = document.getElementById("fire")
-fireButton.addEventListener("click", chooseFire);
-
-const waterButton = document.getElementById("water")
-waterButton.addEventListener("click", chooseWater);
-
-const earthButton = document.getElementById("earth")
-earthButton.addEventListener("click", chooseEarth);
 
 const buttons = document.querySelectorAll('button');
 
-buttons.forEach()
 
+buttons.forEach((button) => {
+    button.addEventListener('click', () => {
+        let playerChoice = button.id;
+        let computerSelection = computerPlay();
+        playRound(playerChoice, computerSelection);
+        checkScores(playerLives, computerLives);
+    })
+});
 
-
-function chooseFire() {
-    choice = "fire"
-    console.log(choice)
-}
-
-function chooseWater() {
-    choice = "water"
-    console.log(choice)
-}
-
-function chooseEarth() {
-    choice = "earth"
-    console.log(choice)
-}
-
-function game() {
-    for (let i = 0; i < 5; i++) {
-        // player presses button and that button equals players choice
-        const playerChoice = choice
-        const computerChoice = computerPlay();
-        playRound(playerChoice, computerChoice);
-        console.log("Player Score: " + playerScore);
-        console.log("Computer Score: " + computerScore);
-        console.log("\n")
+function checkLives(playerLives, computerLives) {
+    if (computerLives == 0) {
+        finalScores.textContent = "You beat the computer. Congratulations!";
+    } else if (playerLives == 0) {
+        finalScores.textContent = "You have perished at the hands of the computer.";
     }
-    if (computerScore > playerScore) {
-        console.log("You have lost the game! The world ends.")
-    } else if (playerScore > computerScore) {
-        console.log("You have saved humanity! You Win!");
-    } else {
-        console.log("The game is a tie. Rematch.");
-        }
-    }
+    alert("New Game?")
+    reset()
+    location.reload()
+}
 
-game()
+function reset() {
+    computerLives = 0
+    playerLives = 0
+}
