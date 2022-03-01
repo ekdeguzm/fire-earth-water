@@ -2,13 +2,13 @@
 
 Link to the live demo: https://ekdeguzm.github.io/fire-earth-water/
 
-Simple implementation of Rock Paper Scissors game from The Odin Project curriculum but with elements of nature instead.
+Simple implementation of Rock Paper Scissors game from [The Odin Project](https://www.theodinproject.com/paths/foundations/courses/foundations/lessons/rock-paper-scissors) curriculum but with elements of nature instead. 
 
 Fire > Earth > Water > Fire.
 
 Created with HTML, CSS, and JS.
 
-First stage | Game in the browser console
+**First stage: Game in the browser console**
 
 The benefits I got from this stage:
 
@@ -16,7 +16,7 @@ The benefits I got from this stage:
    * Learned how to input chosen item and keep score. 
    * Enjoyed seeing the importance of creating a struture of the game first before creating UI.
 
-Second stage | Creating the UI 
+**Second stage: Creating the UI **
 
 The benefits I got from this stage:
 
