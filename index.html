@@ -11,38 +11,38 @@
 
 <body>
     <div class="header">
-        <h1>Fire</h1> 
-        <h1>Earth</h1>
-        <h1>Water</h1>
-    <!-- </br>
-        <div class="chinese-characters">
-            <img class="imgs" src="earth.png" alt="chinese earth character">
-            <img class="imgs" src="huo.gif" alt="chinese fire chracter">
-            <img class="imgs" src="shui.png" alt="chinese water character">
-        </div> -->
+        <h1>Fire 火</h1> 
+        <h1>Earth 土</h1>
+        <h1>Water 水</h1>
     </div>
+    </br>
+    </br>  
     <div class="main">
         <div class="game-text">
             <p>There are 5 lives. You control 3 elements. There will be 1 left standing. </p>
             <p>Choose your element.</p>
         </div>
-        <div class="buttons">
-            <button class="button" id="Fire"><img src="./images/fire.png" height ="40" width="50" alt="flame icon"></button>
-            <button class="button" id="Water"><img src="./images/leaf.png" height ="40" width="50"alt="leaf icon"></button>
-            <button class="button" id="Earth"><img src="./images/wave.png" height ="40" width="50"alt="wave icon"></button>
+        <div class="button-container">
+            <button class="button zoom-in" id="Fire"><img src="./images/fire.png" height ="50" width="60" alt="flame icon"></button>
+            <button class="button zoom-in" id="Earth"><img src="./images/leaf.png" height ="50" width="60"alt="leaf icon"></button>
+            <button class="button zoom-in" id="Water"><img src="./images/wave.png" height ="50" width="60"alt="wave icon"></button>
         </div>
         </br>
-        <div id="selection"></div>
+        <div id="selection">The computer waits in anticipation for your attack</div>
         </br>
-        <div id="results"></div>
+        <div id="results">Who will win?</div>
     </br>
-        <div id="lives">Player Lives : 5 | Computer Lives: 5</div>
+    <div class="lives-container">
+        <div class="lives" id="yourLivesLeft">Your Lives: 5</div>
+        <div class="lives" id="computerLivesLeft">Computer Lives: 5</div>
+    </div>
+        
     </br>
         <div id="games">Number of games: 0</div>
     
     </div>
     <div class="footer">
-        <p>Created by ekdeguzm</p>
+        <p>Created by <a href="https://github.com/ekdeguzm">ekdeguzm</a></p>
     </div>
 </body>
 </html>
