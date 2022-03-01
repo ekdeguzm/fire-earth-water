@@ -1,89 +1,130 @@
-// player will be playing against the computer
+let playerLives = 5
+let computerLives = 5
+let numberOfGames = 0;
+let playerChoice
+let computerSelection;
 
-// create function that will return Rock, Paper, or Scissors
 function computerPlay() {
     // randomly generate a number
     computerNumber = Math.floor(Math.random() * 3) + 1;
     // associate number with rock, paper, or scissors
     // if the computer number is 1, return rock
     if (computerNumber === 1) {
-        return "rock"; 
+        return "Fire"; 
     }
     // if the computer number is 2, return paper
     if (computerNumber === 2) {
-        return "paper"; 
+        return "Water"; 
     }
     // if the computer number is 3, return scissors
     if (computerNumber === 3) {
-        return "scissors"; 
+        return "Earth"; 
     }
 };
 
 // create a program that plays a single round of Rock Paper Scissors
 function playRound(playerSelection, computerSelection) {
     // compare playerSelection and computerSelection
-    if (playerSelection === "rock") {
-        if (computerSelection === "paper") {
-            computerScore += 1
-            return console.log("You Lose! " + computerSelection + " beats " + playerSelection);
-        } else if (computerSelection === "scissors") {
-            playerScore += 1
-            return console.log("You Win! " + playerSelection + " beats " + computerSelection);
+    if (playerSelection === "Fire") {
+        if (computerSelection === "Water") {
+            numberOfGames += 1;
+            playerLives -= 1
+            selection.textContent = "You shoot out a burst of fire. The computer jets out stream of water."
+            results.textContent = "You Lose! " + computerSelection + ' beats ' + playerSelection;
+            lives.textContent = "Player Lives: " + playerLives + " | " + "Computer Lives: " + computerLives;
+        } else if (computerSelection === "Earth") {
+            numberOfGames += 1;
+            selection.textContent = "A fire tornado appears from your hands. The computer throws blades of grass towards you."
+            computerLives -= 1
+            results.textContent = "You Win! " + playerSelection + ' beats ' + computerSelection;
+            lives.textContent = "Player Lives: " + playerLives + " | " + "Computer Lives: " + computerLives;
         } else {
-            return console.log("Go again! " + "Computer also selected " + playerSelection);
+            numberOfGames += 1;
+            selection.textContent = "You shoot out a burst of flames. The computer counters with flames as well."
+            results.textContent = "It's a tie! Computer has also selected " + playerSelection;
+            lives.textContent = "Player Lives: " + playerLives + " | " + "Computer Lives: " + computerLives;
         }
-    }   else if (playerSelection === 'scissors') {
-        if (computerSelection === "paper") {
-            playerScore += 1
-            return console.log("You Win! " + playerSelection + " beats " + computerSelection);
-        } else if (computerSelection === "rock") {
-            computerScore += 1
-            return console.log("You Lose! " + computerSelection + " beats " + playerSelection);
-        } else if (playerSelection === 'scissors') {
-            return console.log("Go again! " + "Computer also selected " + playerSelection );
+    } else if (playerSelection === "Water") {
+        if (computerSelection === "Fire") {
+            numberOfGames += 1;
+            selection.textContent = "You shoot out a jet of water. The computer hurls flames at you."
+            computerLives -= 1
+            results.textContent = "You Win! " + playerSelection + ' beats ' + computerSelection;
+            lives.textContent = "Player Lives: " + playerLives + " | " + "Computer Lives: " + computerLives;
+        } else if (computerSelection === "Earth") {
+            numberOfGames += 1;
+            selection.textContent = "You shoot out a jet of water. The computer throws blades of grass at you."
+            playerLives -= 1
+            results.textContent = "You Lose! " + computerSelection + ' beats ' + playerSelection;
+            lives.textContent = "Player Lives: " + playerLives + " | " + "Computer Lives: " + computerLives;
+        } else if (playerSelection === 'Water') {
+            numberOfGames += 1;
+            selection.textContent = "You shoot out a jet of water. The also streams a jet of water."
+            results.textContent = "It's a tie! Computer has also selected " + playerSelection;
+            lives.textContent = "Player Lives: " + playerLives + " | " + "Computer Lives: " + computerLives;
         }
-    } else if (playerSelection === 'paper') {
-        if (computerSelection === "rock") {
-            playerScore += 1
-            return console.log("You Win! " + playerSelection + " beats " + computerSelection);
-        } else if (computerSelection === "scissors") {
-            computerScore += 1
-            return console.log("You Lose! " + computerSelection + " beats " + playerSelection);
-        } else if (playerSelection === 'paper') {
-            return console.log("Go again! " + "Computer also selected " + playerSelection );
+    } else if (playerSelection === 'Earth') {
+        if (computerSelection === "Water") {
+            numberOfGames += 1;
+            selection.textContent = "You shoot blades of grass from your palms. The computer streamlines water at you."
+            computerLives -= 1
+            results.textContent = "You Win! " + playerSelection + ' beats ' + computerSelection;
+            lives.textContent = "Player Lives: " + playerLives + " | " + "Computer Lives: " + computerLives;
+        } else if (computerSelection === "Fire") {
+            numberOfGames += 1;
+            selection.textContent = "You shoot blades of grass from your palms. The computer hurls flames at you."
+            playerLives -= 1
+            results.textContent = "You Lose! " + computerSelection + ' beats ' + playerSelection;
+            lives.textContent = "Player Lives: " + playerLives + " | " + "Computer Lives: " + computerLives;
+        } else if (playerSelection === 'Earth') {
+            numberOfGames += 1;
+            selection.textContent = "You shoot blades of grass from your palms. The computer also aims grass at you."
+            results.textContent = "It's a tie! Computer has also selected " + playerSelection;
+            lives.textContent = "Player Lives: " + playerLives + " | " + "Computer Lives: " + computerLives;
 
         }
-}
+    }
+games.textContent = "Number of games: " + numberOfGames; 
 };
 
-// we want to have a max of five rounds, keeps score, and reports a winner at the end
-// create function to track rounds
-function game() {
-    for (let i = 0; i < 5; i++) {
-        console.log("This is game " + (i + 1));
-        const playerChoice = window.prompt("Choose your weapon: rock, paper, or scissors?").toLowerCase();
-        console.log("You have chosen " + playerChoice + "..");
-        const computerChoice = computerPlay();
-        playRound(playerChoice, computerChoice);
-        console.log("Player Score: " + playerScore);
-        console.log("Computer Score: " + computerScore);
-        console.log("\n")
-    }
-    if (computerScore > playerScore) {
-        console.log("You have lost the game! The world ends.")
-    } else if (playerScore > computerScore) {
-        console.log("You have saved humanity! You Win!");
-    } else {
-        console.log("The game is a tie. Rematch.");
-        }
-    }
 
-playerScore = 0
-computerScore = 0
 
+<<<<<<< HEAD
 // Going to delete this storyline. --> want to pursue idea with fire water earth. 
 
 console.log("Aliens have landed on Earth and demand a game of rock paper scissors from a worthy opponent.")
 console.log("You are the one humanity has chosen..")
 console.log("\n")
 game()
+=======
+const buttons = document.querySelectorAll('button');
+
+
+buttons.forEach((button) => {
+    button.addEventListener('click', () => {
+        let playerChoice = button.id;
+        let computerSelection = computerPlay();
+        playRound(playerChoice, computerSelection);
+        checkLives(playerLives, computerLives);
+    })
+});
+
+function checkLives(playerLives, computerLives) {
+    if (computerLives == 0) {
+        results.textContent = "You beat the computer. Congratulations!";
+        alert("New Game?")
+        reset()
+        location.reload()
+    } else if (playerLives == 0) {
+        results.textContent = "You have perished at the hands of the computer.";
+        alert("New Game?")
+        reset()
+        location.reload()
+    }
+}
+
+function reset() {
+    computerLives = 0
+    playerLives = 0
+}
+>>>>>>> rps-ui
