@@ -1,123 +1,103 @@
 let playerLives = 5
 let computerLives = 5
-let numberOfGames = 0;
+let numberOfGames = 0
 let playerChoice
-let computerSelection;
+let computerChoice
+const selection = document.querySelector("#selection")
+const results = document.querySelector("#results")
+const yourLivesLeft = document.querySelector("#yourLivesLeft")
+const computerLivesLeft = document.querySelector("#computerLivesLeft")
 
-function computerPlay() {
-    // randomly generate a number
-    computerNumber = Math.floor(Math.random() * 3) + 1;
-    // associate number with rock, paper, or scissors
-    // if the computer number is 1, return rock
-    if (computerNumber === 1) {
-        return "Fire"; 
+const setText = (element, string) => {
+    element.textContent = string
+}
+
+const winner = (player) => {
+    if (player === "human") {
+        computerLives -= 1
+        setText(results, "You Win! " + playerChoice + ' beats ' + computerChoice);
+        setText(yourLivesLeft, "Your Lives: " + playerLives);
+        setText(computerLivesLeft, "Computer Lives: " + computerLives);
+    } 
+    if (player === "computer") {
+        playerLives -= 1
+        setText(results, "You Lose! " + computerChoice + ' beats ' + playerChoice);
+        setText(yourLivesLeft, "Your Lives: " + playerLives);
+        setText(computerLivesLeft, "Computer Lives: " + computerLives);
+    
+    } 
+    if (player === "tie") {
+        setText(results, "It's a tie! Computer has also selected " + playerChoice);
     }
-    // if the computer number is 2, return paper
-    if (computerNumber === 2) {
-        return "Water"; 
-    }
-    // if the computer number is 3, return scissors
-    if (computerNumber === 3) {
-        return "Earth"; 
-    }
+    numberOfGames += 1;
+    
+}
+
+function computerPlay() { 
+    const elementChoices = ["Fire", "Water", "Earth"]
+    computerNumber = Math.floor(Math.random() * elementChoices.length);
+    return elementChoices[computerNumber]
 };
 
-// create a program that plays a single round of Rock Paper Scissors
 function playRound(playerSelection, computerSelection) {
-    // compare playerSelection and computerSelection
     if (playerSelection === "Fire") {
         if (computerSelection === "Water") {
-            numberOfGames += 1;
-            playerLives -= 1
-            selection.textContent = "You shoot out a burst of fire. The computer jets out stream of water."
-            results.textContent = "You Lose! " + computerSelection + ' beats ' + playerSelection;
-            yourLivesLeft.textContent = "Your Lives: " + playerLives;
-            computerLivesLeft.textContent = "Computer Lives: " + computerLives;
+            winner("computer")
+            setText(selection, "You shoot out a burst of fire. The computer jets out stream of water.")
         } else if (computerSelection === "Earth") {
-            numberOfGames += 1;
-            selection.textContent = "A fire tornado appears from your hands. The computer throws blades of grass towards you."
-            computerLives -= 1
-            results.textContent = "You Win! " + playerSelection + ' beats ' + computerSelection;
-            yourLivesLeft.textContent = "Your Lives: " + playerLives;
-            computerLivesLeft.textContent = "Computer Lives: " + computerLives;
+            winner("human")
+            setText(selection, "A fire tornado appears from your hands. The computer throws blades of grass towards you.")
         } else {
-            numberOfGames += 1;
-            selection.textContent = "You shoot out a burst of flames. The computer counters with flames as well."
-            results.textContent = "It's a tie! Computer has also selected " + playerSelection;
-            yourLivesLeft.textContent = "Your Lives: " + playerLives;
-            computerLivesLeft.textContent = "Computer Lives: " + computerLives;
+            winner("tie")
+            setText(selection, "You shoot out a burst of flames. The computer counters with flames as well.")
         }
     } else if (playerSelection === "Water") {
         if (computerSelection === "Fire") {
-            numberOfGames += 1;
-            selection.textContent = "You shoot out a jet of water. The computer hurls flames at you."
-            computerLives -= 1
-            results.textContent = "You Win! " + playerSelection + ' beats ' + computerSelection;
-            yourLivesLeft.textContent = "Your Lives: " + playerLives;
-            computerLivesLeft.textContent = "Computer Lives: " + computerLives;
+            winner("human")
+            setText(selection, "You shoot out a jet of water. The computer hurls flames at you.")
         } else if (computerSelection === "Earth") {
-            numberOfGames += 1;
-            selection.textContent = "You shoot out a jet of water. The computer throws blades of grass at you."
-            playerLives -= 1
-            results.textContent = "You Lose! " + computerSelection + ' beats ' + playerSelection;
-            yourLivesLeft.textContent = "Your Lives: " + playerLives;
-            computerLivesLeft.textContent = "Computer Lives: " + computerLives;
-        } else if (playerSelection === 'Water') {
-            numberOfGames += 1;
-            selection.textContent = "You shoot out a jet of water. The also streams a jet of water."
-            results.textContent = "It's a tie! Computer has also selected " + playerSelection;
-            yourLivesLeft.textContent = "Your Lives: " + playerLives;
-            computerLivesLeft.textContent = "Computer Lives: " + computerLives;
+            winner("computer")
+            setText(selection,"You shoot out a jet of water. The computer throws blades of grass at you.")
+        } else {
+            winner("tie")
+            setText(selection, "You shoot out a jet of water. The also streams a jet of water.")
         }
     } else if (playerSelection === 'Earth') {
         if (computerSelection === "Water") {
-            numberOfGames += 1;
-            selection.textContent = "You shoot blades of grass from your palms. The computer streamlines water at you."
-            computerLives -= 1
-            results.textContent = "You Win! " + playerSelection + ' beats ' + computerSelection;
-            yourLivesLeft.textContent = "Your Lives: " + playerLives;
-            computerLivesLeft.textContent = "Computer Lives: " + computerLives;
+            winner("human")
+            setText(selection, "You shoot blades of grass from your palms. The computer streamlines water at you.")
         } else if (computerSelection === "Fire") {
-            numberOfGames += 1;
-            selection.textContent = "You shoot blades of grass from your palms. The computer hurls flames at you."
-            playerLives -= 1
-            results.textContent = "You Lose! " + computerSelection + ' beats ' + playerSelection;
-            yourLivesLeft.textContent = "Your Lives: " + playerLives;
-            computerLivesLeft.textContent = "Computer Lives: " + computerLives;
-        } else if (playerSelection === 'Earth') {
-            numberOfGames += 1;
-            selection.textContent = "You shoot blades of grass from your palms. The computer also aims grass at you."
-            results.textContent = "It's a tie! Computer has also selected " + playerSelection;
-            yourLivesLeft.textContent = "Your Lives: " + playerLives;
-            computerLivesLeft.textContent = "Computer Lives: " + computerLives;
+            winner("computer")
+            setText(selection, "You shoot blades of grass from your palms. The computer hurls flames at you.")
+        } else {
+            winner("tie")
+            setText(selection, "You shoot blades of grass from your palms. The computer also aims grass at you.")
 
         }
     }
 games.textContent = "Number of games: " + numberOfGames; 
 };
 
-
-
 const buttons = document.querySelectorAll('button');
 
 
 buttons.forEach((button) => {
     button.addEventListener('click', () => {
-        let playerChoice = button.id;
-        let computerSelection = computerPlay();
-        playRound(playerChoice, computerSelection);
+        playerChoice = button.id;
+        computerChoice = computerPlay();
+        playRound(playerChoice, computerChoice);
         checkLives(playerLives, computerLives);
     })
 });
 
 function checkLives(playerLives, computerLives) {
     if (computerLives == 0) {
-        results.textContent = "You beat the computer. Congratulations!";
+        setText(results, "You beat the computer. Congratulations!");
         alert("You beat the computer. Congratulations!\n\nNew Game?")
         reset()
         location.reload()
     } else if (playerLives == 0) {
-        results.textContent = "You have perished at the hands of the computer.";
+        setText(results, "You have perished at the hands of the computer.");
         alert("You have perished at the hands of the computer.\n\nNew Game?")
         reset()
         location.reload()
