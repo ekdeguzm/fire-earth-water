@@ -2,7 +2,7 @@
 
 **Link to the live demo found [here](https://ekdeguzm.github.io/fire-earth-water/)**
 
-Simple implementation of Rock Paper Scissors game from [The Odin Project](https://www.theodinproject.com/paths/foundations/courses/foundations/lessons/rock-paper-scissors) curriculum but with elements of nature instead. 
+An implementation of Rock Paper Scissors game from [The Odin Project](https://www.theodinproject.com/paths/foundations/courses/foundations/lessons/rock-paper-scissors) curriculum but with elements of nature instead. 
 
 Fire > Earth > Water > Fire.
 
