@@ -1,6 +1,6 @@
 # Fire Earth Water
 
-:link: **Link to the live demo found [here](https://ekdeguzm.github.io/fire-earth-water/)**
+:link: **Live preview of demo found [here](https://ekdeguzm.github.io/fire-earth-water/)**
 
 An implementation of Rock Paper Scissors game from [The Odin Project](https://www.theodinproject.com/paths/foundations/courses/foundations/lessons/rock-paper-scissors) curriculum but with elements of nature instead. 
 
