@@ -1,6 +1,6 @@
 # Fire Earth Water
 
-**Link to the live demo found [here](https://ekdeguzm.github.io/fire-earth-water/)**
+:link: **Link to the live demo found [here](https://ekdeguzm.github.io/fire-earth-water/)**
 
 An implementation of Rock Paper Scissors game from [The Odin Project](https://www.theodinproject.com/paths/foundations/courses/foundations/lessons/rock-paper-scissors) curriculum but with elements of nature instead. 
 
@@ -24,3 +24,5 @@ The benefits I got from this stage:
    * How to register an action after clicking a button and declaring an argument.
    * Learned basic manipulations of elements styles through JavaScript code (setting attributes, adding/removing classes, changing inline styles and texts).
    * Improved my understanding of JavaScript functions (organization, scopes, calling, invoking, breaking down into smaller ones functions).
+
+![Screenshot 2022-03-07 at 16-51-53 Fire Earth Water](https://user-images.githubusercontent.com/35510088/157144106-5eca4f4b-ebff-4c6c-81ed-10ee65bd7b43.png)
