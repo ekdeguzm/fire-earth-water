@@ -60,7 +60,7 @@ function playRound(playerSelection, computerSelection) {
             setText(selection,"You shoot out a jet of water. The computer throws blades of grass at you.")
         } else {
             winner("tie")
-            setText(selection, "You shoot out a jet of water. The also streams a jet of water.")
+            setText(selection, "You shoot out a jet of water. The computer also streams a jet of water.")
         }
     } else if (playerSelection === 'Earth') {
         if (computerSelection === "Water") {
@@ -71,7 +71,7 @@ function playRound(playerSelection, computerSelection) {
             setText(selection, "You shoot blades of grass from your palms. The computer hurls flames at you.")
         } else {
             winner("tie")
-            setText(selection, "You shoot blades of grass from your palms. The computer also aims grass at you.")
+            setText(selection, "You shoot blades of grass from your palms. The counters with the same..")
 
         }
     }
@@ -79,7 +79,6 @@ games.textContent = "Number of games: " + numberOfGames;
 };
 
 const buttons = document.querySelectorAll('button');
-
 
 buttons.forEach((button) => {
     button.addEventListener('click', () => {
